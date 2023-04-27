@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import { Route, Routes, Navigate } from "react-router-dom";
+
 import MovieList from './components/MovieList';
 import Movie from './components/Movie';
 import EditMovieForm from './components/EditMovieForm';
+import AddMovieForm from './components/AddMovieForm';
 
 import MovieHeader from './components/MovieHeader';
 
@@ -46,6 +48,8 @@ const App = (props) => {
 
           <Routes>
             <Route path="movies/edit/:id" element={<EditMovieForm setMovies={setMovies} />} />
+
+            <Route path="movies/add" element={<AddMovieForm setMovies={setMovies} />} />
 
             <Route path="movies/:id" element={<Movie deleteMovie={deleteMovie} />} />
 
